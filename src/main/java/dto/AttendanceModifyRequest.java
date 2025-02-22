@@ -1,9 +1,9 @@
 package dto;
 
+import constant.Formatter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import util.DateTimeUtil;
-import util.Formatter;
 
 public record AttendanceModifyRequest(
         String nickname,

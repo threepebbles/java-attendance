@@ -1,18 +1,18 @@
-package util;
+package controller;
 
+import constant.Formatter;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import util.AttendanceRecord;
 
 public class FileParser {
 
-    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
     public static List<AttendanceRecord> loadAttendanceRecords() {
         File file = new File("src/main/resources/attendances.csv");
@@ -33,7 +33,7 @@ public class FileParser {
 
     public static AttendanceRecord parseAttendanceRecord(String attendanceData) {
         List<String> parsed = Arrays.stream(attendanceData.split(",", -1)).toList();
-        LocalDateTime dateTime = LocalDateTime.parse(parsed.get(1), FORMATTER);
+        LocalDateTime dateTime = LocalDateTime.parse(parsed.get(1), Formatter.DATETIME_FORMATTER2);
 
         return new AttendanceRecord(
                 parsed.get(0),

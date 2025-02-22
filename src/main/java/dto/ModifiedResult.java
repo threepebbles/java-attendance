@@ -1,9 +1,9 @@
 package dto;
 
+import constant.Formatter;
 import domain.AttendanceStatus;
 import domain.Crew;
 import java.time.LocalDate;
-import util.Formatter;
 
 public record ModifiedResult(
         LocalDate date,

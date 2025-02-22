@@ -1,5 +1,6 @@
 package view;
 
+import constant.Formatter;
 import domain.AttendanceStatus;
 import domain.AttendanceStatusStatistics;
 import domain.Manage;
@@ -12,7 +13,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import util.Formatter;
 
 public class OutputView {
 
