@@ -34,12 +34,6 @@ public class AttendanceService {
         return AttendanceResult.of(DateTimeUtil.nowDate(), request.time(), status);
     }
 
-    private void validateOffDay(LocalDate date) {
-        if (DateTimeUtil.isOffDay(date)) {
-            throw new IllegalArgumentException(date + ": 주말 및 공휴일에는 출석을 받지 않습니다.");
-        }
-    }
-
     public ModifiedResult modifyAttendanceRecord(AttendanceModifyRequest request) {
         validateCampusTime(request.time());
 
@@ -101,6 +95,12 @@ public class AttendanceService {
                             crew.getNickname(), attendanceStatusStatistics, Manage.of(attendanceStatusStatistics));
                 })
                 .toList();
+    }
+    
+    private void validateOffDay(LocalDate date) {
+        if (DateTimeUtil.isOffDay(date)) {
+            throw new IllegalArgumentException(date + ": 주말 및 공휴일에는 출석을 받지 않습니다.");
+        }
     }
 
     private void validateCampusTime(LocalTime time) {
