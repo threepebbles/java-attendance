@@ -1,5 +1,6 @@
-package domain;
+package dto;
 
+import domain.AttendanceTime;
 import java.time.LocalDate;
 
 public record AttendanceRecord(

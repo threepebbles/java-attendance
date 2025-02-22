@@ -1,9 +1,9 @@
 package view;
 
-import domain.AttendanceRecord;
 import domain.AttendanceStatus;
 import domain.AttendanceStatusStatistics;
 import domain.Manage;
+import dto.AttendanceRecord;
 import dto.AttendanceResult;
 import dto.CrewAlmostExpelledResult;
 import dto.ModifiedResult;

@@ -1,12 +1,12 @@
 package service;
 
 import constant.CampusConstant;
-import domain.AttendanceRecord;
 import domain.AttendanceStatus;
 import domain.AttendanceStatusStatistics;
 import domain.Crew;
 import domain.Manage;
 import dto.AttendanceModifyRequest;
+import dto.AttendanceRecord;
 import dto.AttendanceRequest;
 import dto.AttendanceResult;
 import dto.CrewAlmostExpelledResult;
@@ -96,7 +96,7 @@ public class AttendanceService {
                 })
                 .toList();
     }
-    
+
     private void validateOffDay(LocalDate date) {
         if (DateTimeUtil.isOffDay(date)) {
             throw new IllegalArgumentException(date + ": 주말 및 공휴일에는 출석을 받지 않습니다.");

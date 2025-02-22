@@ -1,6 +1,5 @@
 package dto;
 
-import domain.AttendanceRecord;
 import domain.AttendanceStatusStatistics;
 import domain.Manage;
 import java.util.List;
